@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    NAME:  <span id="logged-username">-</span> <br/>
+NAME: <span id="logged-username">-</span> <br/>
 
-    <div id="post-area-container">
-        <label for="post-text-area">Post Content</label>
-        <textarea id="post-text-area" placeholder="Write your thoughts..."></textarea>
-        <button id="post-submit-button" disabled>Post</button>
+<div id="post-area-container">
+    <label for="post-text-area">Post Content</label>
+    <textarea id="post-text-area" placeholder="Write your thoughts..."></textarea>
+    <button id="post-submit-button" disabled>Post</button>
+</div>
+
+<h2>Posts</h2>
+<div id="post-list-container">
+    <div id="post-prefab" class="post-entry-container">
+        <h3 class="post-username"></h3>
+        <span class="post-content"></span>
     </div>
+</div>
 
-    <div id="post-list-container">
-
-    </div>
-
-    <script src="src/index.js" type="module"></script>
+<script src="src/index.js" type="module"></script>
 </body>
 </html>
