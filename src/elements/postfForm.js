@@ -3,9 +3,12 @@ export default class PostForm {
     /**
      * @param {HTMLElement} form
      * @param {PostService} postService
+     * @param {string} username
      */
-    constructor(form, postService) {
+    constructor(form, postService, username) {
         this.postService = postService;
+        this.username = username;
+
         /** @type HTMLTextAreaElement */
         this.textArea = form.querySelector("#post-text-area");
         /** @type HTMLButtonElement */
@@ -22,7 +25,8 @@ export default class PostForm {
     }
 
     #onSubmitClick() {
-        const text = this.textArea.value;
-        this.postService.submit(text);
+        /** @type {Post} */
+        const post= { username: this.username, text: this.textArea.value };
+        this.postService.submit(post);
     }
 }

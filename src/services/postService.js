@@ -1,22 +1,26 @@
 /**
  * @typedef PostEvents
- * @member {() => void}
+ * @property {(Post) => void} onPostAdded
  */
 
 export default class PostService {
     /**
-     * @param {string} username
+     * @param {PostEvents} listeners
      */
-    constructor(username) {
-        this.username = username;
+    constructor(listeners = {}) {
+        this.listeners = listeners;
     }
 
-    submit(text) {
-        if (!this.canPost(text))
+    /** @param {Post} post */
+    submit(post) {
+        if (!this.canPost(post.text))
             return;
 
-        text = this.#preProcessText(text);
-        console.log(this.username, " posted: ", text);
+        const text = this.#preProcessText(post.text);
+        console.log(post.username, " posted: ", text);
+
+        //TODO called from contract event
+        this.listeners.onPostAdded?.(post);
     }
 
     canPost(text) {
