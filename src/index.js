@@ -1,6 +1,6 @@
-import {getRandomUsername} from "./usernames.js";
-import PostForm from "./postfForm.js";
-import PostService from "./postService.js";
+import {getRandomUsername} from "./utils/usernames.js";
+import PostForm from "./elements/postfForm.js";
+import PostService from "./services/postService.js";
 
 const loggedUsername = getRandomUsername();
 const loggedUsernameSpan = document.getElementById("logged-username");

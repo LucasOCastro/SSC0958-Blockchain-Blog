@@ -17,7 +17,7 @@ export default class PostForm {
 
     #onTextAreaInput() {
         const text = this.textArea.value;
-        const canPost = text.length > 0;
+        const canPost = this.postService.canPost(text);
         this.submitButton.disabled = !canPost;
     }
 
