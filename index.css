@@ -1,0 +1,10 @@
+
+#post-list-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+}
+
+.post-entry-container {
+    border: 1px solid black;
+}
