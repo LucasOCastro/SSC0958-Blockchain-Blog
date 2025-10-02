@@ -1,11 +1,12 @@
 
 export default class PostForm {
     /**
-     * @param {HTMLElement} form
+     * @param {HTMLFormElement} form
      * @param {PostService} postService
      * @param {string} username
      */
     constructor(form, postService, username) {
+        this.form = form;
         this.postService = postService;
         this.username = username;
 
@@ -15,7 +16,7 @@ export default class PostForm {
         this.submitButton = form.querySelector("#post-submit-button");
 
         this.textArea.oninput = () => this.#onTextAreaInput();
-        this.submitButton.onclick = () => this.#onSubmitClick();
+        this.form.onsubmit = () => this.#onSubmit();
     }
 
     #onTextAreaInput() {
@@ -24,9 +25,18 @@ export default class PostForm {
         this.submitButton.disabled = !canPost;
     }
 
-    #onSubmitClick() {
-        /** @type {Post} */
-        const post= { username: this.username, text: this.textArea.value };
-        this.postService.submit(post);
+    async #onSubmit() {
+        this.submitButton.disabled = true;
+        this.textArea.disabled = true;
+        this.textArea.blur();
+
+        await this.postService.submit({
+            username: this.username,
+            text: this.textArea.value
+        });
+
+        this.textArea.value = "";
+        this.textArea.disabled = false;
+        this.submitButton.disabled = false;
     }
 }

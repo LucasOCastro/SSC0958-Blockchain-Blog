@@ -14,7 +14,7 @@ class PostEntry {
     }
 }
 
-export class PostList {
+export default class PostList {
     /**
      * @param {HTMLElement} container
      */
