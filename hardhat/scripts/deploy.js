@@ -1,8 +1,8 @@
-const hre = require("hardhat");
-const fs = require("node:fs");
+import fs from "node:fs";
+import hre from "hardhat";
 const { ethers } = hre;
 
-const FRONTEND_CONFIG_PATH = ',,/frontend/src/contractConfig.js';
+const FRONTEND_CONFIG_PATH = '../frontend/src/contractConfig.js';
 const ARTIFACT_PATH = './artifacts/contracts/SocialMedia.sol/SocialMedia.json';
 
 async function exportConfig(contractAddress) {
@@ -10,8 +10,8 @@ async function exportConfig(contractAddress) {
     const abi = artifact.abi;
 
     const configContent = `
-        export const contract_address = "${contractAddress}";
-        export const SocialMediaAbi = ${JSON.stringify(abi, null, 2)};
+export const contract_address = "${contractAddress}";
+export const SocialMediaAbi = ${JSON.stringify(abi, null, 2)};
     `;
 
     try {
