@@ -2,7 +2,7 @@ import {
     BrowserProvider,
     Contract,
 } from 'ethers';
-import { contract_address, SocialMediaAbi } from "../contractConfig";
+import { contract_address, SocialMediaAbi } from "../contract-config.js";
 
 export default class PostService {
     /** @type {BrowserProvider | null} */
@@ -36,13 +36,16 @@ export default class PostService {
         await this.#commit({ username, text: processedText});
     }
 
-    /** @param {string} text */
+    /**
+     * @param {string} text
+     * @returns {boolean}
+     */
     canPost(text) {
         return this.#preProcessText(text).length > 0
-            && this.blockchainReady
-            && this.provider
-            && this.signer
-            && this.contract;
+            && !!this.blockchainReady
+            && !!this.provider
+            && !!this.signer
+            && !!this.contract;
     }
 
     /** @param {string} text */

@@ -2,7 +2,7 @@ import fs from "node:fs";
 import hre from "hardhat";
 const { ethers } = hre;
 
-const FRONTEND_CONFIG_PATH = '../frontend/src/contractConfig.js';
+const FRONTEND_CONFIG_PATH = '../frontend/src/contract-config.js';
 const ARTIFACT_PATH = './artifacts/contracts/SocialMedia.sol/SocialMedia.json';
 
 async function exportConfig(contractAddress) {
