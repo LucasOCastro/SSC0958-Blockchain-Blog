@@ -16,7 +16,10 @@ export default class PostForm {
         this.submitButton = form.querySelector("#post-submit-button");
 
         this.textArea.oninput = () => this.#onTextAreaInput();
-        this.form.onsubmit = () => this.#onSubmit();
+        this.form.onsubmit = async (e) => {
+            e.preventDefault();
+            await this.#onSubmit()
+        };
     }
 
     #onTextAreaInput() {
