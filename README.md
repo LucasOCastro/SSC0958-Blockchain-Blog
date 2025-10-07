@@ -40,11 +40,11 @@ No novo perfil:
    6) A extensão vai sugerir um `Network name` e `Currency symbol`;
    7) Aperte "Save".
 3) Configure uma das contas geradas:
-   4) Clique no nome da conta atual (canto superior esquerdo);
-   5) Clique no botão "Add account or wallet";
-   6) Selecione a opção "Private Key";
-   7) Insira uma das chaves que apareceram no console do hardhat (Cuidado para copiar o valor exato de uma private key, sem espaços antes ou depois)
-   8) Salve e nomeie a conta.
+   1) Clique no nome da conta atual (canto superior esquerdo);
+   2) Clique no botão "Add account or wallet";
+   3) Selecione a opção "Private Key";
+   4) Insira uma das chaves que apareceram no console do hardhat (Cuidado para copiar o valor exato de uma private key, sem espaços antes ou depois)
+   5) Salve e nomeie a conta.
 
 Se a configuração está correta, deve exibir uma conta com aproximadamente 10.000 moedas.
 
