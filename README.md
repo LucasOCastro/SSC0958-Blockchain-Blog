@@ -7,6 +7,9 @@ Uma página web simples que permite escrever e ler posts armazenados em uma Bloc
 Os posts são armazenados inteiramente on-chain para fins didáticos. Em uma aplicação real, seria mais viável
 armazenar CIDs ou outra informação de rastreio/autoria, e armazenar textos/mídia em um banco de dados separado.
 
+### Showcase
+![showcasegif-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/b38dc72a-67bc-4c19-a6d8-0488d0b3666f)
+
 ## Como Rodar
 ### Hardhat
 1) Abra um terminal na pasta `hardhat`;
